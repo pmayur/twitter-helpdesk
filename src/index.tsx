@@ -1,15 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import {Provider} from 'react-redux';
+import {Route, Router, Switch} from 'react-router-dom';
 import App from './App';
 import history from './history';
-import { Route, Router, Switch } from 'react-router-dom';
+import './index.scss';
+import configureStore from './redux/configureStore';
+import {initialReduxStartupScript} from './redux/startupScript';
+
+const store = configureStore();
+
+//@ts-ignore
+initialReduxStartupScript(store);
 
 ReactDOM.render(
-    <Router history={history}>
-        <Switch>
-            <Route path="/" component={App} />
-        </Switch>
-    </Router>,
+    <React.StrictMode>
+        <Provider store={store}>
+            <Router history={history}>
+                <Switch>
+                    <Route path="/" component={App} />
+                </Switch>
+            </Router>
+        </Provider>
+    </React.StrictMode>,
     document.getElementById('root')
 );

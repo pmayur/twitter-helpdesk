@@ -1,5 +1,8 @@
 import React from 'react';
 
-function Dashboard() {}
+function Dashboard() {
+    // TODO: Dashboard UI
+    return <></>;
+}
 
 export default Dashboard;

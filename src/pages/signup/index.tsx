@@ -1,5 +1,8 @@
 import React from 'react';
 
-function Login() {}
+function Signup() {
+    // TODO: Signup UI
+    return <></>;
+}
 
-export default Login;
+export default Signup;

@@ -1,5 +1,7 @@
 import React from 'react';
 
-function ButtonOne() {}
+function ButtonOne() {
+    return <></>;
+}
 
 export default ButtonOne;
